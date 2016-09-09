@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<project name="java-junit-template-project" default="run" basedir=".">
+  <property name="test.build.dir" value="build/test" />
+  <property name="test.src.dir" value="test" />
+
+
+  <path id="classpath.test">
+    <pathelement location="lib/junit-4.10.jar" />
+    <pathelement location="lib/Project.jar"/>
+  </path>
+
+  <target name="test" depends="clean, run" />
+
+
+  <target name="build" depends="clean">
+    <mkdir dir="${test.build.dir}" />
+    <javac srcdir="${test.src.dir}" destdir="${test.build.dir}" includeantruntime="false">
+        <classpath refid="classpath.test"/>
+    </javac>
+    <echo message="Build done" />
+  </target>
+
+  <!-- Test and build all files  -->
+  <!-- To run this: use "ant" (default) or "ant run" -->
+  <target name="run" depends="build">
+    <junit printsummary="on" haltonfailure="no">
+        <classpath>
+          <path refid="classpath.test" />
+          <pathelement location="${test.build.dir}"/>
+        </classpath>
+        <formatter type="brief" usefile="false" />
+        <formatter type="xml"/>
+        <formatter type="plain"/>
+        <batchtest>
+            <fileset dir="${test.src.dir}" includes="**/*Test*.java" />
+        </batchtest>
+    </junit>
+  </target>
+
+  <!-- delete all class files -->
+  <!-- To run this: use "ant clean" -->
+  <target name="clean">
+    <delete>
+        <fileset dir="${basedir}" includes="**/*.class" />
+    </delete>
+    <delete dir="./build"/>
+    <echo message="clean done" />
+  </target>
+</project>
