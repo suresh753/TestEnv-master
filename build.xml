@@ -14,7 +14,7 @@
     <mkdir dir="${test.build.dir}" />
     <echo message="build/test was created done" />
     <javac srcdir="." destdir="${test.build.dir}" includeantruntime="false">
-        <classpath refid="classpath.test"/>
+        <classpath refid="build/test"/>
     </javac>
     <echo message="Build done" />
   </target>
