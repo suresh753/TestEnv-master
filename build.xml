@@ -12,7 +12,8 @@
 
   <target name="build" depends="clean">
     <mkdir dir="${test.build.dir}" />
-    <javac srcdir="${test.src.dir}" destdir="${test.build.dir}" includeantruntime="false">
+    <echo message="build/test was created done" />
+    <javac srcdir="." destdir="${test.build.dir}" includeantruntime="false">
         <classpath refid="classpath.test"/>
     </javac>
     <echo message="Build done" />
