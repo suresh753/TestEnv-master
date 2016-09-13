@@ -5,7 +5,7 @@ import org.junit.Test;
 public class TestEnvTestCases {
  DatabaseDetails main = new DatabaseDetails();
  public String database_url = main.Databaseurl();
- public String database_username = main.Databaseusername();
+ public String database_username = main.Databaseusername(); 
  public String database_password = main.Databasepassword();
  @Test
  public void databaseConnectionTest(){
