@@ -5,7 +5,7 @@
 
   <path id="classpath.test">
     <pathelement location="lib/junit-4.10.jar" />
-    <pathelement location="lib/Project.jar"/>
+    <pathelement location="Project.jar"/>
   </path>
 
   <target name="test" depends="clean, run" />
