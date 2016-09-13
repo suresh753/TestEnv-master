@@ -3,14 +3,12 @@
   <property name="test.build.dir" value="build/test" />
   <property name="test.src.dir" value="." />
 
-
   <path id="classpath.test">
     <pathelement location="lib/junit-4.10.jar" />
     <pathelement location="lib/Project.jar"/>
   </path>
 
   <target name="test" depends="clean, run" />
-
 
   <target name="build" depends="clean">
     <mkdir dir="${test.build.dir}" />
@@ -20,8 +18,6 @@
     <echo message="Build done" />
   </target>
 
-  <!-- Test and build all files  -->
-  <!-- To run this: use "ant" (default) or "ant run" -->
   <target name="run" depends="build">
     <junit printsummary="on" haltonfailure="no">
         <classpath>
@@ -37,8 +33,7 @@
     </junit>
   </target>
 
-  <!-- delete all class files -->
-  <!-- To run this: use "ant clean" -->
+
   <target name="clean">
     <delete>
         <fileset dir="${basedir}" includes="**/*.class" />
@@ -46,4 +41,5 @@
     <delete dir="./build"/>
     <echo message="clean done" />
   </target>
+  
 </project>
