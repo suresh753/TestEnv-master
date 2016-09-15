@@ -1,0 +1,4 @@
+servers:
+    testenv: 60
+    qa : 70
+    production : 90
