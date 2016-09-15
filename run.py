@@ -12,10 +12,9 @@ for element in lines:
     index = element.find(substr, index)
     if index>0:
         total_start = element.find(':',index)
-        total_end = element.find(',',index)
-        index = total_end
-        fail_start=element.find(':',index)
-        fail_end = element.find(',',index+1)
+        total_end = element.find(',',total_start)
+        fail_start=element.find(':',total_end)
+        fail_end = element.find(',',fail_start)
         total=int(element[total_start+2:total_end])
         fail=int(element[fail_start+2:fail_end])
         break
