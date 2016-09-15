@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="java-junit-template-project" default="run" basedir=".">
+<project name="java-junit-template-project" default="JarClean" basedir=".">
   <property name="test.build.dir" value="build/test" />
   <property name="test.src.dir" value="." />
 
@@ -33,13 +33,21 @@
         </batchtest>
     </junit>
   </target>
+  
+  <target name="JarClean" depends="run">
+    <delete file="*.jar"/>
+    <echo message="Project.jar deleted"/>
+  </target>
 
 
   <target name="clean">
+    
     <delete>
-        <fileset dir="${basedir}" includes="**/*.class"/>
+        <fileset dir="${basedir}" includes="TEST-TestEnvTestCases*"/>
     </delete>
+    <echo message="TEST-TestEnvTestCases.txt and xml deleted"/>
     <delete dir="./build"/>
+    <echo message="build foder deleted"/>
     <echo message="clean done" />
   </target>
   
