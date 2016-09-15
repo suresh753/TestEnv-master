@@ -10,7 +10,7 @@ index = 0
 for element in lines:
     substr = "Tests run:"
     index = element.find(substr, index)
-    if index>0:
+    if index>=0:
         total_start = element.find(':',index)
         total_end = element.find(',',total_start)
         fail_start=element.find(':',total_end)
