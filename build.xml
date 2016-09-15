@@ -35,7 +35,7 @@
   </target>
   
   <target name="JarClean" depends="run">
-    <delete file="*.jar*"/>
+   <fileset dir="${basedir}" includes="Project.jar*"/>
     <echo message="Project.jar deleted"/>
   </target>
 
