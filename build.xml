@@ -37,7 +37,7 @@
 
   <target name="clean">
     <delete>
-        <fileset dir="${basedir}" includes="**/*.class" />
+        <fileset dir="${basedir}" includes="**/*.class"/>
     </delete>
     <delete dir="./build"/>
     <echo message="clean done" />
