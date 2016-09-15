@@ -3,7 +3,7 @@ lines=[]
 total=0
 fail=0
 Req_Test_Per = 50
-with open ('/home/ec2-user/.jenkins/jobs/TestEnv/lastSuccessful/log','rt') as in_file:
+with open ('TEST-TestEnvTestCases.txt','rt') as in_file:
     for line in in_file:
         lines.append(line.rstrip('\n'))
 index = 0
