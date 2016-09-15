@@ -1,8 +1,12 @@
 from exceptions import Exception
+import yaml
+with open('config.yaml','r') as content:
+    data = yaml.load(content)
+Req_Test_Per = data["servers"]["testenv"]
 lines=[]
 total=0
 fail=0
-Req_Test_Per = 50
+#Req_Test_Per = 50
 with open ('TEST-TestEnvTestCases.txt','rt') as in_file:
     for line in in_file:
         lines.append(line.rstrip('\n'))
